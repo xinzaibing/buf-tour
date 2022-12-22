@@ -25,6 +25,7 @@ message Pet {
 
 message GetPetRequest {
   string pet_id = 1;
+  string pet_name = 2;
 }
 
 message GetPetResponse {
