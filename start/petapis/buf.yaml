@@ -1,0 +1,16 @@
+version: v1
+name: buf.build/xinzaibing/petapis
+deps:
+   - buf.build/googleapis/googleapis
+breaking:
+  use:
+    - FILE
+lint:
+  use:
+    - DEFAULT
+#  except:
+#    - PACKAGE_VERSION_SUFFIX
+#    - FIELD_LOWER_SNAKE_CASE
+#    - SERVICE_SUFFIX
+#  ignore:
+#    - google/type/datetime.proto
