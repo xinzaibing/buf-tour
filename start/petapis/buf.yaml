@@ -2,6 +2,7 @@ version: v1
 name: buf.build/xinzaibing/petapis
 deps:
    - buf.build/googleapis/googleapis
+   - buf.build/xinzaibing/paymentapis
 breaking:
   use:
     - FILE

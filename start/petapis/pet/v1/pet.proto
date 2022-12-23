@@ -3,6 +3,7 @@ syntax = "proto3";
 package pet.v1;
 
 import "google/type/datetime.proto";
+import "payment/v1alpha1/payment.proto";
 
 option go_package = "github.com/bufbuild/buf-tour/petstore/gen/proto/go/pet/v1;petv1";
 
@@ -14,6 +15,13 @@ enum PetType {
   PET_TYPE_SNAKE = 3;
   PET_TYPE_HAMSTER = 4;
 }
+
+message PurchasePetRequest {
+  string pet_id = 1;
+  payment.v1alpha1.Order order = 2;
+}
+
+message PurchasePetResponse {}
 
 // Pet represents a pet in the pet store.
 message Pet {
@@ -51,4 +59,5 @@ service PetStore {
   rpc GetPet(GetPetRequest) returns (GetPetResponse) {}
   rpc PutPet(PutPetRequest) returns (PutPetResponse) {}
   rpc DeletePet(DeletePetRequest) returns (DeletePetResponse) {}
+  rpc PurchasePet(PurchasePetRequest) returns (PurchasePetResponse) {}
 }
